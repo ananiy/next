@@ -50,6 +50,10 @@ class Switch extends React.Component {
          */
         disabled: PropTypes.bool,
         /**
+         * loading 状态
+         */
+        loading: PropTypes.bool,
+        /**
          * switch的尺寸
          * @enumdesc 正常大小, 缩小版大小
          */
@@ -135,6 +139,7 @@ class Switch extends React.Component {
             className,
             disabled,
             readOnly,
+            loading,
             size,
             checkedChildren,
             unCheckedChildren,
@@ -155,6 +160,7 @@ class Switch extends React.Component {
 
         const classes = classNames({
             [`${prefix}switch`]: true,
+            [`${prefix}switch-loading`]: loading,
             [`${prefix}switch-${status}`]: true,
             [`${prefix}switch-${_size}`]: true,
             [className]: className,
